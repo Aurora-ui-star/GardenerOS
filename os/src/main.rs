@@ -8,7 +8,9 @@ fn panic(_info: &PanicInfo) -> ! {
     loop {}
 }
 
+core::arch::global_asm!(include_str!("entry.asm"));
+
 #[unsafe(no_mangle)]
-extern "C" fn _start() {
+pub fn rust_main() -> ! {
     loop {}
 }
